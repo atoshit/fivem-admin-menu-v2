@@ -1,21 +1,21 @@
 {
   "position": "left",
   "colors": {
-    "background": "rgba(18, 18, 18, 0.5)",
+    "background": "rgba(12, 12, 12, 255)",
     "secondary": "#121212"
   },
   "stringUpper": false,
-  "counter": true,
+  "counter": false,
   "banner": "#FA2C76",
-  "controlsIndicator": true,
+  "controlsIndicator": false,
   "corners": {
     "rounded": true,
-    "radius": "0.5"
+    "radius": "0.4"
   },
-  "perspective": true,
+  "perspective": false,
   "items": {
-    "defaultColor": "#FA2C76",
-    "hoverStyle": "neon",
+    "defaultColor": "#573cc7",
+    "hoverStyle": "rod",
     "line": {
       "rounded": true
     }

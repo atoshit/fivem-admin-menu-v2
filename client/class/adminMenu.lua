@@ -9,3 +9,11 @@ local function createAdminMenuObj()
 end
 
 adminMenu = createAdminMenuObj()
+
+function adminMenu:openMenu()
+    AdminMenu["main"]:SetVisible(not AdminMenu["main"]:IsVisible())
+end
+
+function adminMenu:closeMenu()
+    AdminMenu["main"]:SetVisible(false)
+end

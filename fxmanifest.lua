@@ -5,12 +5,11 @@ use_experimental_fxv2_oal 'yes'
 
 author 'Atoshi'
 description 'Admin Menu V2'
-version '1.0.0'
 
 ui_page "client/lib/zUI/web/build/index.html"
 
 files {
-    "client/lib/zUI/theme.json",
+    "shared/theme.json",
     "client/lib/zUI/web/build/index.html",
     "client/lib/zUI/web/build/**/*"
 }
@@ -32,4 +31,5 @@ client_scripts {
     "client/functions/*.lua",
     "client/class/*.lua",
     "client/menu/*.lua",
+    "client/commands.lua"
 }
