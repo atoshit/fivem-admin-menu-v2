@@ -17,3 +17,12 @@ AddEventHandler("fivem-admin-menu-v2:createRank", function(rank)
 
     Io.Success("Le rang " .. rank.label .. " a été créé avec succès !")
 end)
+
+AddEventHandler("onResourceStart", function(resource)
+    if GetCurrentResourceName() ~= resource then return end
+    local result = MySQL.Sync.fetchAll("SELECT * FROM admin_ranks")
+    for _, rank in ipairs(result) do
+        ranks[#ranks + 1] = rank
+    end
+    print(json.encode(ranks))
+end)
