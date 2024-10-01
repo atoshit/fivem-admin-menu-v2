@@ -33,3 +33,8 @@ client_scripts {
     "client/class/*.lua",
     "client/commands.lua"
 }
+
+server_scripts {
+    "@oxmysql/lib/MySQL.lua",
+    "server/events.lua"
+}

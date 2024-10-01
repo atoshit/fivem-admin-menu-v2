@@ -3,10 +3,9 @@
 local function createAdminMenuObj()
     local self = {
         staffMode = false,
-        newRank = {
-            permissions = {}
-        },
-        colors = {}
+        newRank = {},
+        colors = {},
+        ranks = {}
     }
 
     return self
@@ -23,13 +22,21 @@ function adminMenu:closeMenu()
 end
 
 function adminMenu:getColors()
-    for _, color in pairs(Config.Colors) do
-        self.colors[#self.colors + 1] = color.Label
+    self.colors = {}
+    for _, color in ipairs(Config.Colors) do
+        table.insert(self.colors, color.Label)
     end
 end
 
 function adminMenu:getPermissions()
-    for name, label in pairs(Perms) do
+    self.newRank.permissions = {}
+    for name, _ in pairs(Perms) do
         self.newRank.permissions[name] = false
     end
+end
+
+function adminMenu:createRank()
+    table.insert(self.ranks, self.newRank)
+    TriggerServerEvent("fivem-admin-menu-v2:createRank", self.newRank)
+    self.newRank = { permissions = {} }
 end

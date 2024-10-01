@@ -13,7 +13,7 @@ local Config <const> = {
 
     Colors = {
         { Label = "Rouge", Color = "~r~" },
-        { Label = "Vert", Color = "~g   ~" },
+        { Label = "Vert", Color = "~g~" },
         { Label = "Bleu", Color = "~b~" },
         { Label = "Jaune", Color = "~y~" },
         { Label = "Violet", Color = "~p~" },
