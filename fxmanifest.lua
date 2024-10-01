@@ -4,7 +4,7 @@ lua54 'yes'
 use_experimental_fxv2_oal 'yes'
 
 author 'Atoshi'
-description 'Admin Menu'
+description 'Admin Menu V2'
 version '1.0.0'
 
 ui_page "client/lib/zUI/web/build/index.html"
