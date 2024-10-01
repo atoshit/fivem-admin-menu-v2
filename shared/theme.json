@@ -1,7 +1,7 @@
 {
   "position": "left",
   "colors": {
-    "background": "rgba(12, 12, 12, 255)",
+    "background": "rgba(18, 18, 18, 255)",
     "secondary": "#121212"
   },
   "stringUpper": false,

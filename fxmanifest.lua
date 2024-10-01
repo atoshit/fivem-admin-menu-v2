@@ -15,8 +15,8 @@ files {
 }
 
 shared_scripts {
-    'libs/*.lua',
-    '*.lua'
+    'shared/libs/*.lua',
+    'shared/*.lua'
 }
 
 client_scripts {
@@ -29,7 +29,7 @@ client_scripts {
 
     -- Admin Menu
     "client/functions/*.lua",
-    "client/class/*.lua",
     "client/menu/*.lua",
+    "client/class/*.lua",
     "client/commands.lua"
 }

@@ -2,7 +2,9 @@
 --- @field staffMode boolean
 local function createAdminMenuObj()
     local self = {
-        staffMode = false
+        staffMode = false,
+        newRank = {},
+        colors = {}
     }
 
     return self
@@ -11,9 +13,15 @@ end
 adminMenu = createAdminMenuObj()
 
 function adminMenu:openMenu()
-    AdminMenu["main"]:SetVisible(not AdminMenu["main"]:IsVisible())
+    Menu["main"]:SetVisible(not Menu["main"]:IsVisible())
 end
 
 function adminMenu:closeMenu()
-    AdminMenu["main"]:SetVisible(false)
+    Menu["main"]:SetVisible(false)
+end
+
+function adminMenu:getColors()
+    for _, color in pairs(Config.Colors) do
+        self.colors[#self.colors + 1] = color.Label
+    end
 end

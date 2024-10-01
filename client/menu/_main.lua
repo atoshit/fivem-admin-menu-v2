@@ -1,6 +1,7 @@
-AdminMenu["main"] = zUI.CreateMenu(nil, nil, Config.Menu.Banner, nil, nil)
+-- TODO -> Add a way to get the player's rank
+Menu["main"] = zUI.CreateMenu(nil, "Version 2.0.0", Config.Menu.Banner, nil, nil)
 
-AdminMenu["main"]:SetItems(function (Items)
+Menu["main"]:SetItems(function (Items)
     Items:AddCheckbox(Strings["staffMode"], Strings["staffModeDescription"], adminMenu.staffMode, {}, function(onSelected, onHovered)
         if onSelected then
             adminMenu.staffMode = not adminMenu.staffMode
@@ -9,5 +10,7 @@ AdminMenu["main"]:SetItems(function (Items)
 
     if adminMenu.staffMode then
         Items:AddLine({ Config.Menu.Color })
+        Items:AddButton(Strings["rankManagement"], Strings["rankManagementDescription"], {LeftBadge = 'NEW_STAR', RightLabel = "→→"}, function()
+        end, Menu["rank"])
     end
 end)
