@@ -11,11 +11,12 @@ local Strings <const> = {
     ["creatingRank"] = "Création d'un rang",
     ["rankName"] = "Nom du rang",
     ["rankNameDescription"] = "Le nom du rang",
+    ["rankNameError"] = "Le nom du rang doit contenir aucun espaces",
     ["rankLabel"] = "Label du rang",
     ["rankLabelDescription"] = "Le label du rang",
+    ["rankLabelError"] = "Le label du rang doit contenir aucun espaces et une majuscule au début",
     ["rankColor"] = "Couleur du rang",
     ["rankColorDescription"] = "La couleur du rang",
-
     ["undefined"] = "Indéfini",
 }
 
