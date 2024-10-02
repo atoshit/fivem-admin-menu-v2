@@ -9,6 +9,7 @@ description 'Admin Menu V2'
 ui_page "client/lib/zUI/web/build/index.html"
 
 files {
+    -- zUI
     "shared/theme.json",
     "client/lib/zUI/web/build/index.html",
     "client/lib/zUI/web/build/**/*"
@@ -35,6 +36,12 @@ client_scripts {
 }
 
 server_scripts {
+    -- MySQL
     "@oxmysql/lib/MySQL.lua",
-    "server/events.lua"
+
+    -- Events
+    "server/events.lua",
+
+    -- Functions
+    "server/functions.lua"
 }

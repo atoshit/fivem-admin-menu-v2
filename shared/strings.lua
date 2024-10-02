@@ -13,11 +13,14 @@ local Strings <const> = {
     ["rankNameDescription"] = "Le nom du rang",
     ["rankNameError"] = "Le nom du rang doit contenir aucun espaces",
     ["rankLabel"] = "Label du rang",
+    ["rankPermissions"] = "Permissions du rang",
+    ["rankPermissionsError"] = "Vous devez sélectionner au moins une permission",
     ["rankLabelDescription"] = "Le label du rang",
     ["rankLabelError"] = "Le label du rang doit contenir aucun espaces et une majuscule au début",
     ["rankColor"] = "Couleur du rang",
     ["rankColorDescription"] = "La couleur du rang",
     ["undefined"] = "Indéfini",
+    ["author"] = "Auteur",
 }
 
 _ENV.Strings = Strings

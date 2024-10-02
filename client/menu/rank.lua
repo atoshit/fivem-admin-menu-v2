@@ -91,6 +91,19 @@ local function addPermissionsAndCreateButton(Items)
 
     Items:AddButton(Strings["createRank"], Strings["createRankDescription"], {RightBadge = "NEW_STAR"}, function(onSelected)
         if onSelected then
+            local good = false
+            
+            for name, state in pairs(adminMenu.newRank.permissions) do
+                if state then
+                    good = true
+                end
+            end
+
+            if not good then
+                Io.Error(Strings["rankPermissionsError"])
+                return
+            end
+
             adminMenu:createRank()
         end
     end)
