@@ -93,6 +93,7 @@ local function addPermissionsAndButton(Items, rank, isEditing)
     Items:AddLine({ Config.Menu.Color })
 
     for name, label in pairs(Perms) do
+        print(name,  rank.permissions[name])
         local isChecked = rank.permissions[name] or false
         Items:AddCheckbox(label, label, isChecked, {}, function(onSelected)
             if onSelected then
