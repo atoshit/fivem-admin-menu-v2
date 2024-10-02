@@ -1,4 +1,4 @@
-local ranks = {}
+ranks = {}
 
 RegisterServerEvent("fivem-admin-menu-v2:createRank")
 AddEventHandler("fivem-admin-menu-v2:createRank", function(rank)

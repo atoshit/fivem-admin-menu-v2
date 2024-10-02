@@ -1,11 +1,18 @@
 Menu["rank"] = zUI.CreateSubMenu(Menu["main"], nil, "Version 2.0.0", Config.Menu.Banner)
 Menu["createRank"] = zUI.CreateSubMenu(Menu["rank"], nil, Strings["creatingRank"], Config.Menu.Banner)
+Menu["editRank"] = zUI.CreateSubMenu(Menu["rank"], nil, Strings["editingRank"], Config.Menu.Banner)
+Menu["editingRank"] = zUI.CreateSubMenu(Menu["editRank"], nil, Strings["editingRank"], Config.Menu.Banner)
 
 Menu["rank"]:SetItems(function(Items)
     Items:AddButton(Strings["createRank"], Strings["createRankDescription"], {RightLabel = "→→"}, function()
         adminMenu:getColors()
         adminMenu:getPermissions()
     end, Menu["createRank"])
+
+    Items:AddButton(Strings["editingRank"], Strings["editingRankDescription"], {RightLabel = "→→"}, function()
+        adminMenu:getColors()
+        adminMenu:getPermissions()
+    end, Menu["editRank"])
 end)    
 
 --- Verify if the rank name is valid
@@ -92,7 +99,7 @@ local function addPermissionsAndCreateButton(Items)
     Items:AddButton(Strings["createRank"], Strings["createRankDescription"], {RightBadge = "NEW_STAR"}, function(onSelected)
         if onSelected then
             local good = false
-            
+
             for name, state in pairs(adminMenu.newRank.permissions) do
                 if state then
                     good = true
@@ -110,6 +117,21 @@ local function addPermissionsAndCreateButton(Items)
 end
 
 Menu["createRank"]:SetItems(function(Items)
+    updateRankName(Items)
+    updateRankLabel(Items)
+    updateRankColor(Items)
+    addPermissionsAndCreateButton(Items)
+end)
+
+Menu["editRank"]:SetItems(function(Items)
+    for k, v in ipairs(adminMenu.ranks) do
+        Items:AddButton(v.label, v.name, {RightLabel = "→→"}, function()
+            adminMenu.rankToEdit = v
+        end, Menu["editingRank"])
+    end
+end)
+
+Menu["editingRank"]:SetItems(function(Items)
     updateRankName(Items)
     updateRankLabel(Items)
     updateRankColor(Items)

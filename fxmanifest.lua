@@ -16,6 +16,8 @@ files {
 }
 
 shared_scripts {
+    -- ESX
+    '@es_extended/imports.lua',
     'shared/libs/*.lua',
     'shared/*.lua'
 }
@@ -43,5 +45,8 @@ server_scripts {
     "server/events.lua",
 
     -- Functions
-    "server/functions.lua"
+    "server/functions.lua",
+
+    -- Callbacks
+    "server/callback.lua"
 }

@@ -5,7 +5,8 @@ local function createAdminMenuObj()
         staffMode = false,
         newRank = {},
         colors = {},
-        ranks = {}
+        ranks = {},
+        currentRank = nil
     }
 
     return self
@@ -39,4 +40,11 @@ function adminMenu:createRank()
     table.insert(self.ranks, self.newRank)
     TriggerServerEvent("fivem-admin-menu-v2:createRank", self.newRank)
     self.newRank = { permissions = {} }
+end
+
+function adminMenu:getRanks()
+    ESX.TriggerServerCallback("fivem-admin-menu-v2:getRanks", function(ranks)
+        print(json.encode(ranks))
+        self.ranks = ranks
+    end)
 end

@@ -11,6 +11,7 @@ Menu["main"]:SetItems(function (Items)
     if adminMenu.staffMode then
         Items:AddLine({ Config.Menu.Color })
         Items:AddButton(Strings["rankManagement"], Strings["rankManagementDescription"], {LeftBadge = 'NEW_STAR', RightLabel = "→→"}, function()
+            adminMenu:getRanks()
         end, Menu["rank"])
     end
 end)
