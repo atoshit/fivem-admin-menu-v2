@@ -25,6 +25,8 @@ local Strings <const> = {
     ["rankColorDescription"] = "La couleur du rang",
     ["undefined"] = "Indéfini",
     ["author"] = "Auteur",
+    ["label"] = "Label",
+    ["name"] = "Nom",
 }
 
 _ENV.Strings = Strings

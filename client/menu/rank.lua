@@ -142,7 +142,7 @@ end)
 
 Menu["editRank"]:SetItems(function(Items)
     for _, v in ipairs(adminMenu.ranks) do
-        Items:AddButton(v.label, v.name, {RightLabel = "→→"}, function()
+        Items:AddButton(v.label, v.name .. " | " .. v.label, {RightLabel = "→→"}, function()
             adminMenu.rankToEdit = v
         end, Menu["editingRank"])
     end

@@ -44,7 +44,16 @@ end
 
 function adminMenu:getRanks()
     ESX.TriggerServerCallback("fivem-admin-menu-v2:getRanks", function(ranks)
-        print(json.encode(ranks))
         self.ranks = ranks
     end)
+end
+
+-- Ajoutez un délai entre les mises à jour des rangs
+local lastRankUpdate = 0
+function adminMenu:updateRanksIfNeeded()
+    local currentTime = GetGameTimer()
+    if currentTime - lastRankUpdate > 5000 then -- 5 secondes de délai
+        self:getRanks()
+        lastRankUpdate = currentTime
+    end
 end
